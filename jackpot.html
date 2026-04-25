@@ -1,0 +1,23 @@
+<script>
+
+let jackpot = Math.floor(Math.random() * 100) + 1;
+
+for(let i=1; i<=10; i++) {
+
+    let guess = prompt("Guess a number (1-100): ")
+
+    if (jackpot == guess){
+        alert("7 Crore Mil Gae Tumeh!!!")
+        break
+    }
+
+    if(jackpot > guess){
+        alert("Hint: jackpot is greater than " + guess)
+    }
+
+    if(jackpot < guess){
+        alert("Hint: jackpot is smaller than " + guess)
+    }
+}
+
+</script>
