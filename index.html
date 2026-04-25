@@ -1,315 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shivam Shejwal - Professional Resume</title>
-  <style>
-    :root {
-      --primary: #2563eb;
-      --dark: #0f172a;
-      --light: #f8fafc;
-      --accent: #38bdf8;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shivam Shejwal | Portfolio</title>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    body {
-      background: linear-gradient(120deg, #f1f5f9, #e2e8f0);
-      color: #111827;
-      padding: 20px;
-    }
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      background: white;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      animation: fadeIn 1s ease;
-    }
+body{
+background:#0f172a;
+color:white;
+}
 
-    @keyframes fadeIn {
-      from {opacity:0; transform:translateY(10px)}
-      to {opacity:1; transform:translateY(0)}
-    }
+/* NAVBAR */
+nav{
+position:fixed;
+width:100%;
+top:0;
+background:rgba(15,23,42,.8);
+backdrop-filter:blur(10px);
+padding:15px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+}
 
-    header {
-      background: var(--dark);
-      color: white;
-      padding: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
+nav h2{
+color:#38bdf8;
+}
 
-    .profile {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
 
-    .profile img {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      border: 3px solid var(--accent);
-      object-fit: cover;
-    }
+nav a{
+text-decoration:none;
+color:white;
+font-size:14px;
+}
 
-    .name h1 {
-      font-size: 26px;
-    }
+nav a:hover{
+color:#38bdf8;
+}
 
-    .name p {
-      opacity: 0.8;
-    }
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 8%;
+}
 
-    .btn {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 10px 18px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: .3s;
-    }
+.hero-text h1{
+font-size:48px;
+}
 
-    .btn:hover {
-      transform: translateY(-2px);
-      background: #1d4ed8;
-    }
+.hero-text span{
+color:#38bdf8;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-    }
+.hero-text p{
+margin:15px 0;
+color:#cbd5e1;
+}
 
-    .sidebar {
-      background: var(--light);
-      padding: 25px;
-      border-right: 1px solid #e5e7eb;
-    }
+.btn{
+padding:12px 22px;
+border:none;
+border-radius:8px;
+background:#38bdf8;
+color:black;
+cursor:pointer;
+font-weight:600;
+}
 
-    .content {
-      padding: 25px;
-    }
+.hero img{
+width:320px;
+border-radius:20px;
+box-shadow:0 20px 40px rgba(0,0,0,.5);
+}
 
-    .section {
-      margin-bottom: 25px;
-    }
+/* SECTION */
+section{
+padding:80px 8%;
+}
 
-    .section h2 {
-      font-size: 18px;
-      color: var(--primary);
-      margin-bottom: 10px;
-      border-bottom: 2px solid #e5e7eb;
-      padding-bottom: 5px;
-    }
+.section-title{
+font-size:28px;
+margin-bottom:30px;
+color:#38bdf8;
+}
 
-    .skill {
-      margin-bottom: 10px;
-    }
+/* ABOUT */
+.about{
+background:#020617;
+border-radius:20px;
+padding:40px;
+}
 
-    .skill-bar {
-      height: 6px;
-      background: #e5e7eb;
-      border-radius: 10px;
-      overflow: hidden;
-    }
+/* SKILLS */
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
 
-    .skill-fill {
-      height: 100%;
-      background: var(--primary);
-      width: 0;
-      transition: 1s ease;
-    }
+.skill-card{
+background:#020617;
+padding:20px;
+border-radius:15px;
+transition:.3s;
+border:1px solid #1e293b;
+}
 
-    .card {
-      background: #f8fafc;
-      padding: 15px;
-      border-radius: 10px;
-      margin-bottom: 12px;
-      transition: .3s;
-      border: 1px solid #e5e7eb;
-    }
+.skill-card:hover{
+transform:translateY(-5px);
+border-color:#38bdf8;
+}
 
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.08);
-    }
+/* EXPERIENCE */
+.timeline{
+border-left:2px solid #38bdf8;
+padding-left:20px;
+}
 
-    .tag {
-      display: inline-block;
-      background: #e0f2fe;
-      color: #0369a1;
-      padding: 4px 10px;
-      border-radius: 20px;
-      margin: 3px;
-      font-size: 12px;
-    }
+.timeline-item{
+margin-bottom:30px;
+}
 
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #f1f5f9;
-      font-size: 14px;
-    }
+.timeline-item h3{
+color:#38bdf8;
+}
 
-    @media(max-width: 768px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
+/* PROJECTS */
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
 
-      header {
-        text-align: center;
-      }
-    }
-  </style>
+.project-card{
+background:#020617;
+padding:20px;
+border-radius:15px;
+border:1px solid #1e293b;
+transition:.3s;
+}
+
+.project-card:hover{
+transform:translateY(-6px);
+border-color:#38bdf8;
+}
+
+/* CONTACT */
+.contact{
+text-align:center;
+background:#020617;
+border-radius:20px;
+}
+
+footer{
+text-align:center;
+padding:20px;
+color:#94a3b8;
+}
+
+@media(max-width:900px){
+.hero{
+flex-direction:column;
+text-align:center;
+}
+.hero img{
+margin-top:30px;
+}
+}
+
+</style>
 </head>
 <body>
 
-<div class="container">
+<nav>
+<h2>Shivam</h2>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
 
-<header>
-  <div class="profile">
-    <img src="https://i.pravatar.cc/150?img=12" />
-    <div class="name">
-      <h1>Shivam Shejwal</h1>
-      <p>Data Engineer | Python | SQL | Power BI</p>
-    </div>
-  </div>
+<!-- HERO -->
+<section class="hero" id="home">
 
-  <button class="btn" onclick="downloadResume()">Download Resume</button>
-</header>
-
-<div class="grid">
-
-<div class="sidebar">
-
-<div class="section">
-<h2>Contact</h2>
-<p>📧 shivam@email.com</p>
-<p>📱 +91 9876543210</p>
-<p>📍 Mumbai, India</p>
+<div class="hero-text">
+<h1>Hi, I'm <span>Shivam Shejwal</span></h1>
+<h2 id="typing"></h2>
+<p>Technical Analyst at eClerx | Data Engineer | Python | SQL | Power BI</p>
+<button class="btn" onclick="window.print()">Download Resume</button>
 </div>
 
-<div class="section">
-<h2>Skills</h2>
+<img src="https://i.pravatar.cc/400?img=12">
 
-<div class="skill">
-<p>Python</p>
-<div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
-</div>
+</section>
 
-<div class="skill">
-<p>SQL</p>
-<div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
-</div>
+<!-- ABOUT -->
+<section id="about">
+<h2 class="section-title">About Me</h2>
 
-<div class="skill">
-<p>Power BI</p>
-<div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div>
-</div>
-
-<div class="skill">
-<p>Data Analysis</p>
-<div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div>
-</div>
-
-</div>
-
-<div class="section">
-<h2>Tech Stack</h2>
-<span class="tag">Python</span>
-<span class="tag">Pandas</span>
-<span class="tag">NumPy</span>
-<span class="tag">SQL</span>
-<span class="tag">Power BI</span>
-<span class="tag">Excel</span>
-</div>
-
-</div>
-
-<div class="content">
-
-<div class="section">
-<h2>Profile</h2>
+<div class="about">
 <p>
-Motivated Data Engineer fresher with strong foundation in Python, SQL, and data visualization.
-Experienced in building real-world data analytics projects and dashboards.
-Seeking entry-level opportunities to contribute to data-driven decision making.
+Currently working as Technical Analyst at eClerx with experience in data analysis,
+Excel automation, SQL querying and reporting. Passionate about Data Engineering,
+Python development and building real-world analytics solutions.
+</p>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<h2 class="section-title">Skills</h2>
+
+<div class="skills-grid">
+<div class="skill-card">Python</div>
+<div class="skill-card">SQL</div>
+<div class="skill-card">Power BI</div>
+<div class="skill-card">Excel</div>
+<div class="skill-card">Data Analysis</div>
+<div class="skill-card">Pandas</div>
+<div class="skill-card">NumPy</div>
+<div class="skill-card">HTML CSS</div>
+</div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+<h2 class="section-title">Experience</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>Technical Analyst — eClerx</h3>
+<p>Currently Working</p>
+<p>
+• Monitoring technical workflows and operational data<br>
+• Data validation using Excel and SQL<br>
+• Creating reports and dashboards<br>
+• Troubleshooting system issues
 </p>
 </div>
 
-<div class="section">
-<h2>Projects</h2>
-
-<div class="card">
-<h3>Sales Data Analysis Project</h3>
-<p>Performed EDA using Pandas and Matplotlib. Created dashboard in Power BI.</p>
-</div>
-
-<div class="card">
-<h3>Real-time Chat Application</h3>
-<p>Built chat app using HTML, CSS, JS, PHP and MySQL with WebSockets.</p>
-</div>
-
-</div>
-
-<div class="section">
-<h2>Education</h2>
-
-<div class="card">
-<h3>Bachelor's Degree in IT</h3>
-<p>University of Mumbai</p>
-<p>2022 - 2025</p>
-</div>
-
-</div>
-
-<div class="section">
-<h2>Experience</h2>
-
-<div class="card">
+<div class="timeline-item">
 <h3>Data Science Intern</h3>
-<p>Worked on data cleaning, analysis and dashboard creation.</p>
+<p>
+Worked on data cleaning, EDA, and dashboard creation using Python & Power BI
+</p>
 </div>
 
 </div>
+</section>
 
+<!-- PROJECTS -->
+<section id="projects">
+<h2 class="section-title">Projects</h2>
+
+<div class="projects">
+
+<div class="project-card">
+<h3>Sales Data Analysis</h3>
+<p>EDA using Pandas, visualization using Matplotlib and dashboard in Power BI</p>
+</div>
+
+<div class="project-card">
+<h3>Real Time Chat App</h3>
+<p>HTML CSS JS PHP MySQL WebSocket based chat application</p>
+</div>
+
+<div class="project-card">
+<h3>Data Engineering Pipeline</h3>
+<p>ETL pipeline using Python, SQL and automation scripts</p>
 </div>
 
 </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2 class="section-title">Contact</h2>
+
+<div class="contact">
+<p>Email: shivam@email.com</p>
+<p>Phone: +91 9876543210</p>
+<p>Location: Mumbai, India</p>
+</div>
+</section>
 
 <footer>
-© 2026 Shivam Shejwal | Dynamic Resume Portfolio
+© 2026 Shivam Shejwal Portfolio
 </footer>
 
-</div>
-
 <script>
+const roles=[
+"Technical Analyst",
+"Data Engineer",
+"Python Developer",
+"Power BI Developer"
+];
 
-// Animate skill bars
-window.addEventListener("load", () => {
-  document.querySelectorAll(".skill-fill").forEach(bar => {
-    bar.style.width = bar.dataset.width;
-  });
-});
+let i=0;
+let j=0;
+let current="";
+let isDeleting=false;
 
-// Download resume (print)
-function downloadResume() {
-  window.print();
+function type(){
+current=roles[i];
+
+if(!isDeleting){
+j++;
+if(j>current.length){
+isDeleting=true;
+setTimeout(type,1000);
+return;
+}
+}
+else{
+j--;
+if(j==0){
+isDeleting=false;
+i++;
+if(i==roles.length)i=0;
+}
 }
 
+document.getElementById("typing").innerHTML=current.substring(0,j);
+setTimeout(type,isDeleting?50:100);
+}
+
+type();
 </script>
 
-</body>
-</html>
+</bod
